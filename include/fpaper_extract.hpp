@@ -51,6 +51,20 @@ public:
             case ITALIC_SET: {
                 this->extracted_text.append("\x1b[3m"); break;
             }
+
+            case UNDERLINED_SET: {
+                this->extracted_text.append("\x1b[4m"); break;
+            }
+
+            case BLINK_SET: {
+                this->extracted_text.append("\x1b[5m"); break;
+            }
+
+            case RAPID_BLINK_SET: {
+                #if defined(_WIN64) || defined(_WIN32)
+                    this->extracted_text.append("\x1b[6m"); break;
+                #endif // defined(_WIN64) || defined(_WIN32)
+            }
         }
     }
 

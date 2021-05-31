@@ -25,7 +25,10 @@ enum FPaperMarkers : const uch {
     LIGHT_SET           = 0x30,
     BOLD_SET            = 0x31,
     DIM_SET             = 0x32,
-    ITALIC_SET          = 0x33
+    ITALIC_SET          = 0x33,
+    UNDERLINED_SET      = 0x34,
+    BLINK_SET           = 0x35,
+    RAPID_BLINK_SET     = 0x36
 };
 
 namespace marker {
@@ -44,6 +47,9 @@ namespace marker {
     static bool is_bold_marker(uch& ch) { return (ch == BOLD_SET) ? true : false; }
     static bool is_dim_marker(uch& ch) { return (ch == DIM_SET) ? true : false; }
     static bool is_italic_marker(uch& ch) { return (ch == ITALIC_SET) ? true : false; }
+    static bool is_underlined_marker(uch& ch) { return (ch == UNDERLINED_SET) ? true : false; }
+    static bool is_blink_marker(uch& ch) { return (ch == BLINK_SET) ? true : false; }
+    static bool is_rapid_blink_marker(uch& ch) { return (ch == RAPID_BLINK_SET) ? true : false; }
 }
 
 #endif // FPAPER_FPAPER_MARKERS_HPP

@@ -2,4 +2,7 @@
 &Hello1 world0
 1This is bold0
 2This is dim0
-3This is italic0
+3This is italic0
+4This is underlined0
+5This is blink0
+6This is rapid blink (platform specific)0
