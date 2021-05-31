@@ -26,7 +26,12 @@ class FPaper_Extract {
          is_start_of_text       = false,
          is_end_of_text         = false,
 
-         is_style_marker        = false;
+         is_style_marker        = false,
+
+         is_left_align          = false,
+         is_center_align        = false,
+         is_right_align         = false,
+         is_reset_align         = false;
 public:
     FPaper_Extract(FPaper& x) noexcept {
         this->clone = x;
@@ -64,6 +69,37 @@ public:
                 #if defined(_WIN64) || defined(_WIN32)
                     this->extracted_text.append("\x1b[6m"); break;
                 #endif // defined(_WIN64) || defined(_WIN32)
+            }
+
+            case ALIGN_LEFT_SET: {
+                this->is_right_align         =
+                        this->is_center_align=
+                        this->is_reset_align = false;
+
+                this->is_left_align = true; break;
+            }
+
+            case ALIGN_CENTER_SET: {
+                this->is_right_align         =
+                        this->is_left_align  =
+                        this->is_reset_align = false;
+
+                this->is_center_align = true; break;
+            }
+
+            case ALIGN_RIGHT_SET: {
+                this->is_center_align        =
+                        this->is_left_align  =
+                        this->is_reset_align = false;
+
+                this->is_right_align = true; break;
+            }
+
+            case ALIGN_RESET: {
+                this->is_center_align        =
+                        this->is_left_align  =
+                        this->is_reset_align =
+                        this->is_right_align = false; break;
             }
         }
     }

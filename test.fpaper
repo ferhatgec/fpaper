@@ -5,4 +5,7 @@
 3This is italic0
 4This is underlined0
 5This is blink0
+{This is left aligned (by renderer)~
+|This is center aligned (by renderer)~
+}This is right aligned (by renderer)~
 6This is rapid blink (platform specific)0

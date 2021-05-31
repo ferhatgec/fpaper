@@ -28,7 +28,13 @@ enum FPaperMarkers : const uch {
     ITALIC_SET          = 0x33,
     UNDERLINED_SET      = 0x34,
     BLINK_SET           = 0x35,
-    RAPID_BLINK_SET     = 0x36
+    RAPID_BLINK_SET     = 0x36,
+
+    // These styles must be rendered by renderer implementation
+    ALIGN_LEFT_SET      = 0x7B,
+    ALIGN_CENTER_SET    = 0x7C,
+    ALIGN_RIGHT_SET     = 0x7D,
+    ALIGN_RESET         = 0x7E
 };
 
 namespace marker {
@@ -50,6 +56,11 @@ namespace marker {
     static bool is_underlined_marker(uch& ch) { return (ch == UNDERLINED_SET) ? true : false; }
     static bool is_blink_marker(uch& ch) { return (ch == BLINK_SET) ? true : false; }
     static bool is_rapid_blink_marker(uch& ch) { return (ch == RAPID_BLINK_SET) ? true : false; }
+
+    static bool is_left_align(uch& ch) { return (ch == ALIGN_LEFT_SET) ? true : false; }
+    static bool is_center_align(uch& ch) { return (ch == ALIGN_CENTER_SET) ? true : false; }
+    static bool is_right_align(uch& ch) { return (ch == ALIGN_RIGHT_SET) ? true : false; }
+    static bool is_reset_align(uch& ch) { return (ch == ALIGN_RESET) ? true : false; }
 }
 
 #endif // FPAPER_FPAPER_MARKERS_HPP
