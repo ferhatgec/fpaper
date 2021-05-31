@@ -26,9 +26,7 @@ class FPaper_Extract {
          is_start_of_text       = false,
          is_end_of_text         = false,
 
-         is_style_marker        = false,
-         is_light_set_marker    = false,
-         is_bold_set_marker     = false;
+         is_style_marker        = false;
 public:
     FPaper_Extract(FPaper& x) noexcept {
         this->clone = x;
@@ -36,6 +34,7 @@ public:
     ~FPaper_Extract() = default;
 
     void DetectStyle(uch ch) noexcept {
+        // not platform specific.
         switch(ch) {
             case LIGHT_SET: {
                 this->extracted_text.append("\x1b[0m"); break;
@@ -43,6 +42,14 @@ public:
 
             case BOLD_SET: {
                 this->extracted_text.append("\x1b[1m"); break;
+            }
+
+            case DIM_SET: {
+                this->extracted_text.append("\x1b[2m"); break;
+            }
+
+            case ITALIC_SET: {
+                this->extracted_text.append("\x1b[3m"); break;
             }
         }
     }

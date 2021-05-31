@@ -23,7 +23,9 @@ enum FPaperMarkers : const uch {
 
     STYLE_MARKER        = 0x1A,
     LIGHT_SET           = 0x30,
-    BOLD_SET            = 0x31
+    BOLD_SET            = 0x31,
+    DIM_SET             = 0x32,
+    ITALIC_SET          = 0x33
 };
 
 namespace marker {
@@ -40,6 +42,8 @@ namespace marker {
     static bool is_style_marker(uch& ch) { return (ch == STYLE_MARKER) ? true : false; }
     static bool is_light_marker(uch& ch) { return (ch == LIGHT_SET) ? true : false; }
     static bool is_bold_marker(uch& ch) { return (ch == BOLD_SET) ? true : false; }
+    static bool is_dim_marker(uch& ch) { return (ch == DIM_SET) ? true : false; }
+    static bool is_italic_marker(uch& ch) { return (ch == ITALIC_SET) ? true : false; }
 }
 
 #endif // FPAPER_FPAPER_MARKERS_HPP
