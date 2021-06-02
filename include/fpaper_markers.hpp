@@ -30,6 +30,8 @@ enum FPaperMarkers : const uch {
     BLINK_SET           = 0x35,
     RAPID_BLINK_SET     = 0x36,
 
+    COLOR_RESET         = 0x72,
+
     // These styles must be rendered by renderer implementation
     ALIGN_LEFT_SET      = 0x7B,
     ALIGN_CENTER_SET    = 0x7C,

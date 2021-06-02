@@ -8,4 +8,21 @@
 {This is left aligned (by renderer)~
 |This is center aligned (by renderer)~
 }This is right aligned (by renderer)~
-6This is rapid blink (platform specific)0
+6This is rapid blink (platform specific)0
+(This is blackr
+)This is redr
+*This is greenr
++This is yellowr
+,This is bluer
+-This is magentar
+.This is cyanr
+/This is whiter
+
+dThis is light blackr
+eThis is light redr
+fThis is light greenr
+gThis is light yellowr
+hThis is light bluer
+iThis is light magentar
+jThis is light cyanr
+kThis is light whiter
