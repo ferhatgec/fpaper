@@ -153,14 +153,16 @@ public:
             extracted_text.push_back(ch);
         }
     }
-
-    void Extract() noexcept {
-        for(auto& ch : this->clone.raw) {
+    
+    void Compile() noexcept {
+        for(auto& ch: this->clone.raw) {
             if(this->is_end_of_text) { break; }
-
             this->Detect(ch);
         }
+    }
 
+    void Extract() noexcept {
+        this->Compile();
         std::cout << this->extracted_text << '\n';
     }
 };
