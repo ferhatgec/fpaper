@@ -14,8 +14,6 @@
 class FPaper_Extract {
     FPaper clone;
 
-    std::string extracted_text;
-
     bool is_start_marker        = false,
          is_start_marker_2      = false,
          is_start_marker_3      = false,
@@ -32,6 +30,8 @@ class FPaper_Extract {
          is_center_align        = false,
          is_right_align         = false,
          is_reset_align         = false;
+public:
+         std::string extracted_text;
 public:
     FPaper_Extract(FPaper& x) noexcept {
         this->clone = x;
